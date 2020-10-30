@@ -1,0 +1,26 @@
+PROCEDURE swap (VAR x, VAR y)
+VAR
+    aux : INTEGER;
+BEGIN
+    aux:=x;
+    x:=y;
+    y:=aux;
+END
+
+ALGORITHM Tri_Insertion
+VAR
+    i : INTEGER;
+    tab : ARRAY_OF INTEGER[];
+BEGIN
+    i := 1;
+    WHILE (i< tab.length) DO
+        j:= i;
+        WHILE (j>0 AND tab[j-1] > tab[j]) DO
+            swap (tab[j] , tab[j-1]) ;
+            j:= j-1;
+
+        END_WHILE
+        i:= i+1 ;
+    END_WHILE
+
+END
